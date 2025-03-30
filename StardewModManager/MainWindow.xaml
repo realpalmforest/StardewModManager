@@ -1,0 +1,29 @@
+﻿<Window x:Class="StardewModManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StardewModManager"
+        mc:Ignorable="d"
+        Title="Stardew Mod Manager" Height="450" Width="800">
+    <TabControl x:Name="profiles_tabcontrol">
+        <TabItem x:Name="profiles_tabitem" Header="Profiles">
+            <Grid Background="#FFE5E5E5">
+                <ListBox x:Name="profiles_listbox" ItemsSource="{Binding ProfileList}" DisplayMemberPath="Name"/>
+            </Grid>
+        </TabItem>
+        <TabItem x:Name="manage_tabitem" Header="Manage" Loaded="manage_tabitem_Loaded">
+            <Grid Background="#FFE5E5E5">
+                <ComboBox x:Name="profiles_combobox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding ProfileList}" DisplayMemberPath="Name" SelectionChanged="profiles_combobox_SelectionChanged"/>
+                <TextBox x:Name="profile_name_textbox" HorizontalAlignment="Left" Height="26" Margin="70,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" MaxLines="1" FontSize="16" TextChanged="profile_name_textbox_TextChanged"/>
+                <Label x:Name="profile_name_label" Content="Name" HorizontalAlignment="Left" Height="26" Margin="10,46,0,0" VerticalAlignment="Top" Width="55"/>
+            </Grid>
+        </TabItem>
+        <TabItem x:Name="mods_tabitem" Header="Mods">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+        <TabItem x:Name="settings_tabitem" Header="Settings">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+    </TabControl>
+</Window>

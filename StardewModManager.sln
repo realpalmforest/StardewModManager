@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StardewModManager", "StardewModManager\StardewModManager.csproj", "{ABF134A1-63D6-4F18-AA22-10EAE0E0F2F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABF134A1-63D6-4F18-AA22-10EAE0E0F2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF134A1-63D6-4F18-AA22-10EAE0E0F2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF134A1-63D6-4F18-AA22-10EAE0E0F2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF134A1-63D6-4F18-AA22-10EAE0E0F2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A435F069-8EB1-417F-BD53-322B0E65B64A}
+	EndGlobalSection
+EndGlobal
