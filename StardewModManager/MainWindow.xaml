@@ -9,14 +9,21 @@
     <TabControl x:Name="profiles_tabcontrol">
         <TabItem x:Name="profiles_tabitem" Header="Profiles">
             <Grid Background="#FFE5E5E5">
-                <ListBox x:Name="profiles_listbox" ItemsSource="{Binding ProfileList}" DisplayMemberPath="Name"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35*"/>
+                    <ColumnDefinition Width="362*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox x:Name="profiles_listbox" ItemsSource="{Binding ProfileList}" DisplayMemberPath="Name" Grid.ColumnSpan="2"/>
             </Grid>
         </TabItem>
         <TabItem x:Name="manage_tabitem" Header="Manage" Loaded="manage_tabitem_Loaded">
             <Grid Background="#FFE5E5E5">
-                <ComboBox x:Name="profiles_combobox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding ProfileList}" DisplayMemberPath="Name" SelectionChanged="profiles_combobox_SelectionChanged"/>
-                <TextBox x:Name="profile_name_textbox" HorizontalAlignment="Left" Height="26" Margin="70,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" MaxLines="1" FontSize="16" TextChanged="profile_name_textbox_TextChanged"/>
-                <Label x:Name="profile_name_label" Content="Name" HorizontalAlignment="Left" Height="26" Margin="10,46,0,0" VerticalAlignment="Top" Width="55"/>
+                <TextBox x:Name="profile_name_textbox" HorizontalAlignment="Left" Height="26" Margin="70,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" MaxLines="1" FontSize="16"/>
+                <Label x:Name="profile_name_label" Content="Name" HorizontalAlignment="Left" Height="26" Margin="10,59,0,0" VerticalAlignment="Top" Width="55"/>
+                <GroupBox x:Name="profile_selector_groupbox" HorizontalAlignment="Center" Height="63" Header="Please select a profile" VerticalAlignment="Center" Width="134">
+                    <ComboBox x:Name="profiles_combobox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" ItemsSource="{Binding ProfileList}" DisplayMemberPath="Name" SelectionChanged="profiles_combobox_SelectionChanged" RenderTransformOrigin="0.492,-2.822"/>
+                </GroupBox>
+                <Button x:Name="save_profile_button" Content="Save" HorizontalAlignment="Left" Margin="663,10,0,0" VerticalAlignment="Top" Height="28" Width="121" Click="save_profile_button_Click"/>
             </Grid>
         </TabItem>
         <TabItem x:Name="mods_tabitem" Header="Mods">

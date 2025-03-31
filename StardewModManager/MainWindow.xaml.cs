@@ -9,7 +9,7 @@ namespace StardewModManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ManageProfile manageTab = new ManageProfile();
+        private ProfileManager manageTab;
         public List<Profile> ProfileList
         {
             get => manageTab.Profiles;
@@ -20,26 +20,28 @@ namespace StardewModManager
             InitializeComponent();
 
             DataContext = this;
+
+            manageTab = new ProfileManager(profile_selector_groupbox, profile_name_label, profile_name_textbox);
         }
 
 
 
         private void manage_tabitem_Loaded(object sender, RoutedEventArgs e)
         {
-            manageTab.ProfileIndex = 0;
-            manageTab.PopulateUI(profile_name_textbox, profiles_combobox);
-        }
-
-        private void profile_name_textbox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            manageTab.SetName(profile_name_textbox.Text);
-            manageTab.PopulateUI(profile_name_textbox, profiles_combobox);
+            manageTab.EndManagement();
         }
 
         private void profiles_combobox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            manageTab.ProfileIndex = profiles_combobox.SelectedIndex;
-            manageTab.PopulateUI(profile_name_textbox, profiles_combobox);
+            manageTab.SelectProfile(profiles_combobox.SelectedIndex);
+        }
+
+
+        private void save_profile_button_Click(object sender, RoutedEventArgs e)
+        {
+            manageTab.SetName(profile_name_textbox.Text);
+
+            manageTab.EndManagement();
         }
     }
 }

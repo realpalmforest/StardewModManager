@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mods\Mod.cs" />
-    <Compile Include="Profiles\ManageProfile.cs" />
+    <Compile Include="Profiles\ProfileManager.cs" />
     <Compile Include="Profiles\Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
